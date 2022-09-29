@@ -1,3 +1,4 @@
+@charset "UTF-8";
 html {
   font-size: 100%;
 }
@@ -18,12 +19,6 @@ li {
 
 img {
   max-width: 100%;
-}
-
-h2 {
-  display: block;
-  font-size: 1.5em;
-  font-weight: bold;
 }
 
 .wrapper {
@@ -69,17 +64,30 @@ h2 {
   background-position: center;
 }
 
-#header {
+.sp-menu {
+  display: none;
+}
+
+.overlay {
+  display: none;
+}
+
+.header {
   width: 100%;
   min-height: 100vh;
-  background-image: url(../img/street-cafe-gce90fcbdd_1280.jpg);
+  background-image: url(../img/hard-rock-cafe-gd6a1d64f6_1280.jpg);
   background-size: cover;
   background-position: center top;
   background-repeat: no-repeat;
   padding: 20px 40px;
   position: relative;
 }
-#header nav ul {
+
+input {
+  display: none;
+}
+
+nav ul {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -87,18 +95,19 @@ h2 {
       -ms-flex-pack: end;
           justify-content: flex-end;
 }
-#header nav li {
+nav li {
   margin-left: 30px;
 }
-#header nav li a {
+nav li a {
   color: #fff;
   font-weight: bold;
+  font-size: 24px;
   -webkit-transition: all 0.3s ease;
   transition: all 0.3s ease;
   -webkit-filter: drop-shadow(1px 1px 2px #121212);
           filter: drop-shadow(1px 1px 2px #121212);
 }
-#header nav li a:hover {
+nav li a:hover {
   color: #e03131;
 }
 
@@ -277,6 +286,153 @@ h2 {
 
   .wrapper {
     padding: 30px 16px 60px 16px;
+  }
+
+  /* ヘッダーハンバーガーメニュー */
+  .header__cat input,
+.header__cat label {
+    display: block;
+  }
+
+  .header__cat input {
+    display: none;
+  }
+
+  .header__cat label {
+    position: absolute;
+    right: 10px;
+    clear: both;
+  }
+
+  span.hamburger__icon {
+    display: inline-block;
+    width: 35px;
+    height: 25px;
+  }
+  span.hamburger__icon i {
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    background-color: #fff;
+    display: block;
+    -webkit-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
+  }
+
+  span.hamburger__icon i:nth-child(1) {
+    top: 0;
+  }
+
+  span.hamburger__icon i:nth-child(2) {
+    margin: auto;
+    top: 0;
+    bottom: 0;
+  }
+
+  span.hamburger__icon i:nth-child(3) {
+    bottom: 0;
+  }
+
+  .header__cat input:checked + label span.hamburger__icon i:nth-child(1) {
+    margin: auto;
+    -webkit-transform: rotate(45deg);
+            transform: rotate(45deg);
+    right: 0;
+    bottom: 0;
+    left: 0;
+    top: 0;
+  }
+
+  .header__cat input:checked + label span.hamburger__icon i:nth-child(2) {
+    -webkit-transform: rotateX(90deg);
+            transform: rotateX(90deg);
+    top: 0;
+    bottom: 0;
+  }
+
+  .header__cat input:checked + label span.hamburger__icon i:nth-child(3) {
+    margin: auto;
+    -webkit-transform: rotate(-45deg);
+            transform: rotate(-45deg);
+    top: 0;
+    right: 0;
+    bottom: 0;
+  }
+
+  .header__cat input:checked ~ .header__navi {
+    z-index: 99;
+    opacity: 1;
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+  }
+
+  .header__navi {
+    position: fixed;
+    opacity: 0;
+    background-color: rgba(255, 255, 255, 0.7);
+    top: 50px;
+    right: 0;
+    -webkit-transform: translateX(100%);
+            transform: translateX(100%);
+    bottom: 0;
+    left: 0;
+    z-index: -1;
+    -webkit-transition: all 0.5s ease-out;
+    transition: all 0.5s ease-out;
+  }
+
+  .header__navi__wrap {
+    width: 100%;
+    background-color: #fff;
+    position: absolute;
+    right: 0;
+    top: 0px;
+    bottom: 0;
+    -webkit-transition-duration: 1s;
+            transition-duration: 1s;
+    -webkit-transition-property: right;
+    transition-property: right;
+    overflow-y: scroll;
+  }
+
+  .header__cat input:checked ~ .header__navi .header__navi__wrap {
+    right: 0;
+  }
+
+  .header__navi__list {
+    margin: 0;
+    display: block;
+    -webkit-box-pack: inherit;
+        -ms-flex-pack: inherit;
+            justify-content: inherit;
+  }
+
+  .header__navi__item {
+    border-bottom: 1px solid #000;
+  }
+
+  .header__navi__item a {
+    padding: 0 50px;
+    color: #000;
+    font-size: 24px;
+    height: 100px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: start;
+        -ms-flex-align: start;
+            align-items: flex-start;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    font-weight: 700;
+    line-height: 1;
+    -webkit-transition: background-color 0.3s ease;
+    transition: background-color 0.3s ease;
   }
 
   #menu {

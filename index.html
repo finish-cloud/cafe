@@ -8,28 +8,44 @@
   <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">
   <link rel="stylesheet" href="https://unpkg.com/ress/dist/ress.min.css">
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100;300;400;500;700;900&family=Noto+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <link rel="stylesheet" href="scss/styles.css">
 </head>
 <body>
-  <header id="header">
-    <nav id="navi" >
-      <ul class="wrapper">
-        <li><a href="#menu">MENU</a></li>
-        <li><a href="#about">ABOUT</a></li>
-        <li><a href="#location">LOCATION</a></li>
-      </ul>
-    </nav>
 
-    <h1 class="site-title">
-      <img src="img/logo.svg" alt="">
-  </h1>
-</header>
+    <!-- ヘッダー -->
+    <header class="header">
+      <div class="header__bg">
+        <div class="header__cat">
+          <input type="checkbox" id="hamburger">
+          <label for="hamburger">
+            <span class="hamburger__icon">
+              <i></i>
+              <i></i>
+              <i></i>
+            </span>
+          </label>
+          <nav class="header__navi">
+              <div class="header__navi__wrap">
+                  <ul class="header__navi__list">
+                      <li class="header__navi__item"><a href="#menu"><span>MENU</span></a></li>
+                      <li class="header__navi__item"><a href="#about"><span>ABOUT</span></a></li>
+                      <li class="header__navi__item"><a href="#location"><span>LOCATION</span></a></li>
+                  </ul>
+              </div>
+          </nav>
+        </div>
+      </div>
+        <h1 class="site-title">
+          <img src="img/logo.svg" alt="">
+      </h1>
+    </header>
+
 
 <main>
   <section id="menu" >
     <div class="menu-img fixed-bg">
-      <h2 class="title">MENU
-      </h2>
+      <h2 class="title">MENU</h2>
     </div>
 
         <div id="container" class="wrapper">
